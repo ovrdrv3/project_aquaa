@@ -1,0 +1,19 @@
+red for if not watered within the day....
+
+frequency increase / decrease
+
+sort by columns
+
+Edit button for name field
+
+    maybe on edit scope we can have this be another inline form just to update the plant name...
+
+
+new column - expected water date
+
+Form
+    Delete the form when it has been submitted! So as not to accidentaly send info twice.
+    form validation    LAST WATERED - calendar - should not be allowed to be a future date...
+
+
+Make the form appear when edit button is pressed...
