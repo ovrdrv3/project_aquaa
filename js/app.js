@@ -48,8 +48,8 @@ function setRowAttributes() {
         });
     })
 }
-
-
+//declare global variable - edit
+edit = "";
 
 $( document ).ready(function() {
     var editToggle = false;
