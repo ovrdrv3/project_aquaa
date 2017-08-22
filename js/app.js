@@ -130,10 +130,15 @@ $( document ).ready(function() {
             var newID = "plant" + response;
 
             $('#list-of-plants').append("<tr id='" + newID + "'></tr>");
+            if($("#no-plants-placeholder").length > 0) {
+              $("#no-plants-placeholder").remove();
+            }
+
             build('build','row_edit', newID);
             $form.each(function(){
                 this.reset();
             });
+
             $('#new-plant-form-name').focus();
         });
 

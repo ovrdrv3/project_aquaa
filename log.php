@@ -181,36 +181,41 @@ switch($_GET['mode']){
 
     }
 
-
-    foreach($flowers as $flower) : ?>
-        <tr <?= get_days_left($flower['water_date'],$flower['water_frequency'],"class")  ?> id="plant<?= $flower['id'] ?>">
-            <td><?= $flower['name'] ?>
-                <? if ($scope == "all_edit" || $scope == "row_edit"):?>
-                    <button name="remove-plant" type="submit"  data-id="<?= $flower['id'] ?>" class="btn pull-right remove-plant-button" style="background-color: inherit">
-                    <?= i('trash-o') ?>
-                    </button>
-                <? endif ?>
-            </td>
-            <td><?= nice_date($flower['water_date']) ?></td>
-            <td><?= nice_date(get_next_date($flower['water_date'],$flower['water_frequency'])) ?></td>
-            <td><?= nice_days(intval($flower['water_frequency'])) ?>
-                <? if ($scope == "all_edit" || $scope == "row_edit"):?>
-                    <button name="add-day" type="submit"  data-id="<?= $flower['id'] ?>" data-direction="up" class="btn pull-right add-day-button" style="background-color: inherit">
-                    <?= i('plus') ?>
-                    </button>
-                    <? if (intval($flower['water_frequency']) > 1) : ?>
-                        <button name="remove-day" type="submit"  data-id="<?= $flower['id'] ?>" data-direction="down" class="btn pull-right remove-day-button" style="background-color: inherit">
-                        <?= i('minus') ?>
+    if(isset($flowers)){
+        foreach($flowers as $flower) : ?>
+            <tr <?= get_days_left($flower['water_date'],$flower['water_frequency'],"class")  ?> id="plant<?= $flower['id'] ?>">
+                <td><?= $flower['name'] ?>
+                    <? if ($scope == "all_edit" || $scope == "row_edit"):?>
+                        <button name="remove-plant" type="submit"  data-id="<?= $flower['id'] ?>" class="btn pull-right remove-plant-button" style="background-color: inherit">
+                        <?= i('trash-o') ?>
                         </button>
                     <? endif ?>
-                <? endif ?>
-            </td>
-            <td><button type="button" name="water-button" class="btn btn-block water-button" data-id="<?= $flower['id'] ?>" style="opacity: 0.5;"><i class="fa fa-check" aria-hidden="true"></i></button></td>
-        </tr>
-
-
+                </td>
+                <td><?= nice_date($flower['water_date']) ?></td>
+                <td><?= nice_date(get_next_date($flower['water_date'],$flower['water_frequency'])) ?></td>
+                <td><?= nice_days(intval($flower['water_frequency'])) ?>
+                    <? if ($scope == "all_edit" || $scope == "row_edit"):?>
+                        <button name="add-day" type="submit"  data-id="<?= $flower['id'] ?>" data-direction="up" class="btn pull-right add-day-button" style="background-color: inherit">
+                        <?= i('plus') ?>
+                        </button>
+                        <? if (intval($flower['water_frequency']) > 1) : ?>
+                            <button name="remove-day" type="submit"  data-id="<?= $flower['id'] ?>" data-direction="down" class="btn pull-right remove-day-button" style="background-color: inherit">
+                            <?= i('minus') ?>
+                            </button>
+                        <? endif ?>
+                    <? endif ?>
+                </td>
+                <td><button type="button" name="water-button" class="btn btn-block water-button" data-id="<?= $flower['id'] ?>" style="opacity: 0.5;"><i class="fa fa-check" aria-hidden="true"></i></button></td>
+            </tr>
         <?
-    endforeach;
+        endforeach;
+    } else {
+        //if there are no flowers yet, display some text with instruction.
+        ?> <tr id="no-plants-placeholder"><td colspan="5"><h3 style="text-align: center;">Add a plant below!</h3></td><tr><?
+    }
+
+
+
     //free result
     mysqli_free_result($result);
     mysqli_stmt_close($stmt);

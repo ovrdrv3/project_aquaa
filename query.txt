@@ -1,0 +1,9 @@
+This is the query to be ran to create the db in phpmyadmin:
+
+CREATE TABLE `aquaa`.`plants` (
+    `id` INT NOT NULL AUTO_INCREMENT ,
+    `name` VARCHAR(255) NOT NULL ,
+    `water_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+    `water_frequency` INT(3) NOT NULL ,
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8;
