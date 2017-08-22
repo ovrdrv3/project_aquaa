@@ -1,5 +1,7 @@
 This is the query to be ran to create the db in phpmyadmin:
 
+CREATE DATABASE aquaa;
+
 CREATE TABLE `aquaa`.`plants` (
     `id` INT NOT NULL AUTO_INCREMENT ,
     `name` VARCHAR(255) NOT NULL ,

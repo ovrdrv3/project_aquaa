@@ -211,7 +211,7 @@ switch($_GET['mode']){
         endforeach;
     } else {
         //if there are no flowers yet, display some text with instruction.
-        ?> <tr id="no-plants-placeholder"><td colspan="5"><h3 style="text-align: center;">Add a plant below!</h3></td><tr><?
+        ?> <tr id="no-plants-placeholder"><td colspan="5"><h3 style="text-align: center;">Add a plant below!</h3></td></tr><?
     }
 
 
