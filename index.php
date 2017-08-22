@@ -9,9 +9,6 @@
 	<link rel="stylesheet" type="text/css" href="styles/css/font-awesome.min.css" media="screen">
 	<!-- custom css -->
 	<link rel="stylesheet" type="text/css" href="styles/css/personal.css" media="screen">
-	<!-- google fonts -->
-	<!-- <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina|Open+Sans" rel="stylesheet"> -->
-
 </head>
 
 <body>
@@ -85,7 +82,6 @@
 		</div>
 		<!-- sidebar -->
 		<div class="col-md-2">
-			<button id="theholybutton">click me</button>
 			<h2>Is your internal calendar perfect?</h2>
 			<p>It is difficult to remember the last time plants are watered. This becomes increasingly difficult as the number of plants in your office and home grow. Project aquaa puts the power of data to work and is an easy to use utility to help keep track of your plants!</p>
 			<p>< > by ovrdrv3</p>
